@@ -4,16 +4,16 @@ import { PageHeader } from "./PageHeader.js";
 import { MetricGrid } from "./MetricGrid.js";
 import { Timeline } from "./Timeline.js";
 
-function Nav(activePage) {
+function Nav(activePage, className = "app-nav") {
   return html`
-    <nav class="app-nav" aria-label="Navegación principal">
+    <nav class="${className}" aria-label="Navegación principal">
       ${pageOrder
         .map((id) => {
           const isActive = id === activePage;
           return html`
             <button class="nav-button ${isActive ? "active" : ""}" data-route="${id}" type="button">
               <span class="nav-dot"></span>
-              ${pages[id].navLabel}
+              <span class="nav-label">${pages[id].navLabel}</span>
             </button>
           `;
         })
@@ -93,7 +93,7 @@ export function AppShell(activePage) {
             <h2>Cuidado inteligente para acompañar mejor.</h2>
           </div>
         </div>
-        ${Nav(activePage)}
+        ${Nav(activePage, "app-nav sidebar-nav")}
         <p class="support-copy">Una interfaz cálida, clara y lista para conectarse a sensores, voz y alertas reales.</p>
       </aside>
 
@@ -104,6 +104,8 @@ export function AppShell(activePage) {
         ${InsightPanel(page)}
         ${Actions(page)}
       </main>
+
+      ${Nav(activePage, "app-nav bottom-nav")}
     </div>
   `;
 }

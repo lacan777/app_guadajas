@@ -1,4 +1,4 @@
-const CACHE_NAME = "calli-ui-v2";
+const CACHE_NAME = "calli-ui-v3";
 const ASSETS = [
   "./",
   "./index.html",
