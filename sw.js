@@ -1,6 +1,5 @@
-const CACHE_NAME = "calli-ui-v3";
+const CACHE_NAME = "calli-ui-v4";
 const ASSETS = [
-  "./",
   "./index.html",
   "./manifest.webmanifest",
   "./src/main.js",
@@ -32,5 +31,30 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
-  event.respondWith(caches.match(event.request).then((cached) => cached || fetch(event.request)));
+
+  if (event.request.mode === "navigate") {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          if (response.redirected) {
+            return fetch("./index.html", { cache: "reload" });
+          }
+
+          return response;
+        })
+        .catch(() => caches.match("./index.html"))
+    );
+    return;
+  }
+
+  event.respondWith(
+    caches.match(event.request).then((cached) => {
+      if (cached && !cached.redirected) return cached;
+
+      return fetch(event.request).then((response) => {
+        if (response.redirected) return response;
+        return response;
+      });
+    })
+  );
 });

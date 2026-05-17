@@ -2,7 +2,7 @@
   "name": "Calli Cuidado Inteligente",
   "short_name": "Calli",
   "description": "Web app de cuidado inteligente para presencia, estado y alertas.",
-  "start_url": "./index.html",
+  "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
