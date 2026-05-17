@@ -1,0 +1,8 @@
+node_modules/
+.vercel/
+dist/
+build/
+.DS_Store
+Thumbs.db
+*.log
+ChatGPT Image*.png

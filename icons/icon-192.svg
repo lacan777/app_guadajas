@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192">
+  <rect width="192" height="192" rx="44" fill="#f7f1e8"/>
+  <circle cx="96" cy="88" r="50" fill="#10263f" opacity=".08"/>
+  <path d="M78 120c9-28 24-55 45-76 4 30-5 60-31 82 19 1 35-4 49-15-13 27-38 42-72 37 0-10 3-19 9-28Z" fill="#1d4b5a"/>
+  <path d="M64 132c29 8 55 5 81-11" fill="none" stroke="#c58b3b" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="134" cy="54" r="8" fill="#d9a85a"/>
+  <text x="96" y="168" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#10263f">Calli</text>
+</svg>

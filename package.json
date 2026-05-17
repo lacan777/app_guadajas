@@ -1,0 +1,10 @@
+{
+  "name": "calli-web-app",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node serve-static.js",
+    "check": "node --check src/main.js && node --check src/app.js && node --check src/data.js && node --check serve-static.js"
+  }
+}
